@@ -25,4 +25,14 @@ function tracker() {
         $(this).addClass("future");
       }
     }); 
-})
+}
+tracker();
+//retrieve and display from local storage
+function display() {
+  $(".time-block").each(function() {
+    var blockHr = $(this).attr("id");
+    $(this).children(".description").val(localStorage.getItem(blockHr));
+  });
+}
+display();
+});
